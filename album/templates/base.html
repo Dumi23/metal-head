@@ -1,0 +1,58 @@
+{% load static %}
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="{% static 'css/nav.css' %}">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	</head>	
+<!-- Options -->
+<nav class="navbar navbar-expand-md navbar-dark fixed-top">
+<input type="checkbox" id="burger-toggle">
+		<label for="burger-toggle" class="burger-menu">
+		  <div class="line"></div>
+		  <div class="line"></div>
+		  <div class="line"></div>
+		</label>
+		<div class="menu">
+		  <div class="menu-inner">
+			<ul class="menu-nav">
+			  <li class="menu-nav-item"><a class="menu-nav-link" href="#"><span>
+					<div>Home</div>
+				  </span></a></li>
+			  <li class="menu-nav-item"><a class="menu-nav-link" href="#"><span>
+					<div>About</div>
+				  </span></a></li>
+			  <li class="menu-nav-item"><a class="menu-nav-link" href="#"><span>
+					<div>Profile</div>
+				  </span></a></li>
+			  <li class="menu-nav-item"><a class="menu-nav-link" href="#"><span>
+					<div>Search</div>
+				  </span></a></li>
+			</ul>
+			<div class="gallery">
+			  <div class="title">
+				<p>Welcome To Metal Head</p>
+			  </div>
+			  <div class="images">
+				<a class="image-link" href="#">
+				  <div class="image" data-label=""><img src="https://i.scdn.co/image/ab67616d0000b273946cb01ce19e132b950409e3" alt=""></div>
+				</a>
+				<a class="image-link" href="#">
+				  <div class="image" data-label=""><img src="https://i.scdn.co/image/ab67616d0000b273b721deaeba384c89858cf996" alt=""></div>
+				</a>
+				<a class="image-link" href="#">
+				  <div class="image" data-label=""><img src="https://i.scdn.co/image/ab67616d0000b2739bbd79106e510d13a9a5ec33" alt=""></div>
+				</a>
+				<a class="image-link" href="#">
+				  <div class="image" data-label=""><img src="https://i.loli.net/2019/10/18/buDT4YS6zUMfHst.jpg" alt=""></div>
+				</a>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</nav>
+{% block content %}
+{% endblock content %}
+</html>
