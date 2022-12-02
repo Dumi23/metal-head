@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .helper import Album
 from rest_framework.renderers import TemplateHTMLRenderer
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.permissions import IsAuthenticated
@@ -40,6 +39,6 @@ class RateAlbum(APIView):
         auth_manager = SpotifyClientCredentials(ClientID, ClientSecret)
         sp = spotipy.Spotify(auth_manager=auth_manager)
         album = sp.album(album_id=id, market=None)
-        albumRated = AlbumRated.objects.create(idAlbum = album['id'], Name=album['name'], Artist=album['artists'][0]['name'], Image = album['images'][0]['url'], TotalTracks=album['total_tracks'], Rating=10)
+        albumRated = AlbumRated.objects.create(idAlbum = album['id'], Name=album['name'], Artist=album['artists'][0]['name'], Image = album['images'][0]['url'], TotalTracks=album['total_tracks'], Rating=request.data['rating'])
         albumRated.save()
         return Response(AlbumRated.objects.latest('-id'))
