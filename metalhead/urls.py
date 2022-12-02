@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from album.views import GetAlbum, RateAlbum
+from album.views import GetAlbum, RateAlbum, GetUserRatedAlbums
 from users.views import login, Login, Register 
 
 urlpatterns = [
@@ -25,4 +25,5 @@ urlpatterns = [
     path('', login),
     path('login', Login.as_view()),
     path('register', Register.as_view()),
+    path('user', GetUserRatedAlbums.as_view())
 ]

@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class AlbumRated(models.Model):
-    idAlbum = models.CharField(max_length=255, unique=True)
+    idAlbum = models.CharField(max_length=255)
     Name = models.CharField(max_length=255)
     Artist = models.CharField(max_length=255) 
     Image = models.CharField(max_length=255)
