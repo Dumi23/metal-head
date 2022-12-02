@@ -1,1 +1,1 @@
-web python manage.py migrate 
+web python manage.py migrate && gunicorn metalhead.wsgi:application --log-file -
