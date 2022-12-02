@@ -1,1 +1,1 @@
-web python manage.py migrate && gunicorn querygetter.wsgi:application --log-file -
+web python manage.py migrate && gunicorn metalhead.wsgi:application --log-file -
