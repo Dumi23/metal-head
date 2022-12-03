@@ -1,8 +1,9 @@
 from .models import AlbumRated
+from django.db.models import Avg
 
 def average_calc(idAlbum):
-    try: 
-        avg = float(AlbumRated.objects.get(idAlbum = idAlbum).Rating / AlbumRated.objects.filter(idAlbum = idAlbum).count())
-        return avg
-    except AlbumRated.DoesNotExist:
-        return 0
+        avg = AlbumRated.objects.filter(idAlbum=idAlbum).aggregate(Avg('Rating'))
+        print(avg.values())
+        if avg['Rating__avg'] == None:
+            return 0 
+        return avg['Rating__avg']
